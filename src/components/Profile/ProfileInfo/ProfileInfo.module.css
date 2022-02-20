@@ -1,0 +1,8 @@
+.content__mainImg {
+    width: 800px;
+    height: 100px;
+    object-fit: cover;
+}
+.descriptionBlock {
+    padding: 10px;
+}

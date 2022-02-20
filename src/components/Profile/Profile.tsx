@@ -1,32 +1,16 @@
 import React from 'react';
-import s from './MyPosts.module.css';
+import s from './Profile.module.css';
+import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const MyPosts = () => {
+
+const Profile = () => {
     return (
-        <div className={s.content}>
-            <div>
-                <img className={s.content__mainImg} src="https://www.worldbook.com/images/WBBlog_KidsCoding.jpg"
-                     alt=""/>
-            </div>
-            <div>
-                ava + description
-            </div>
-            <div>
-                My posts
-                <div>
-                    New post
-                </div>
-            </div>
-            <div className={s.posts}>
-                <div className={s.item}>
-                    post 1
-                </div>
-                <div className={s.item}>
-                    post 2
-                </div>
-            </div>
+        <div>
+            <ProfileInfo/>
+            <MyPosts/>
         </div>
     );
 };
 
-export default MyPosts;
+export default Profile;

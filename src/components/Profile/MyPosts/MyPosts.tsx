@@ -1,30 +1,25 @@
 import React from 'react';
 import s from './MyPosts.module.css';
+import Post from "./Post/Post";
 
 const MyPosts = () => {
     return (
-        <div>
+        <div className={s.postsBlock}>
             <div>
-                MY POSTS
+                <h3 className={s.postsBlockTitle}>MY POSTS</h3>
                 <div>
-                    <textarea></textarea>
-                    <button>Add post</button>
+                    <div>
+                        <textarea></textarea>
+                    </div>
+                    <div>
+                        <button>Add post</button>
+                    </div>
                 </div>
             </div>
             <div className={s.posts}>
-                <div className={s.item}>
-                    <img className={s.avatar} src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/man-technologist.png" alt="avatar"/>
-                    post 1
-                </div>
-                <div className={s.item}>
-                    post 2
-                </div>
-                <div className={s.item}>
-                    post 3
-                </div>
-                <div className={s.item}>
-                    post 4
-                </div>
+                <Post message='HI! How are you?' like={5}/>
+                <Post message='Its OK' like={4}/>
+                <Post message='YO' like={3}/>
             </div>
         </div>
     );

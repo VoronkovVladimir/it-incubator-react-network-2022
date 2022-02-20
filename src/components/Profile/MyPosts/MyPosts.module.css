@@ -1,7 +1,9 @@
-.item {
-    color:aqua;
+.postsBlock {
+    padding: 10px;
 }
-.avatar {
-    width: 50px;
-    border-radius: 50%;
+.posts {
+    padding-top: 30px;
+}
+.postsBlockTitle {
+    margin: 0 0 5px 0;
 }
