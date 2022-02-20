@@ -1,0 +1,13 @@
+.content {
+    grid-area: c;
+    background-color: burlywood;
+}
+.content__mainImg {
+    width: 800px;
+    height: 100px;
+    object-fit: cover;
+}
+.item {
+    color:aqua;
+
+}
