@@ -1,16 +1,14 @@
 import React from 'react';
 import s from './MyPosts.module.css';
-import Post from "./Post/Post";
+import Post, {PostPropsType} from "./Post/Post";
 
-const MyPosts = () => {
-    let posts = [
-        {id: 1, message: 'HI! How are you?', like: 5},
-        {id: 2, message: 'Its OK', like: 4},
-        {id: 3, message: 'YO', like: 3},
-        {id: 4, message: 'YO!!!', like: 2},
-    ]
+type PropsType = {
+    posts: Array<PostPropsType>
+}
 
-    let postsElements = posts.map(post => <Post message={post.message} like={post.like}/>)
+const MyPosts: React.FC<PropsType> = (props) => {
+
+    let postsElements = props.posts.map(post => <Post message={post.message} like={post.like}/>)
 
     return (
         <div className={s.postsBlock}>
