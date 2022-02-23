@@ -1,9 +1,13 @@
 import React from 'react';
 import s from './Navbar.module.css';
 import {NavLink} from 'react-router-dom'
+import Friends from "./Friends/Friends";
+import {FriendPropsType} from "../../redux/state";
 
-
-const Navbar = () => {
+type PropsType = {
+    friendsState: Array<FriendPropsType>
+}
+const Navbar: React.FC<PropsType>= (props) => {
     return (
         <nav className={s.nav}>
             <div>
@@ -17,6 +21,10 @@ const Navbar = () => {
             </div>
             <div>
                 <NavLink to='/music' className={({isActive}) => (isActive ? s.active : s.item)}>Music</NavLink>
+            </div>
+            <div>
+                <h3>Friends</h3>
+                <Friends friendsState={props.friendsState}/>
             </div>
         </nav>
     );

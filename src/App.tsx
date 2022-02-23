@@ -11,27 +11,32 @@ import Settings from "./components/Settings/Settings";
 import {PostPropsType} from "./components/Profile/MyPosts/Post/Post";
 import {DialogItemPropsType} from "./components/Dialogs/DialogItem/DialogItem";
 import {MessageItemPropsType} from "./components/Dialogs/Message/Message";
+import {StatePropsType} from "./redux/state";
 
 type PropsType = {
-    posts: Array<PostPropsType>
-    dialogs: Array<DialogItemPropsType>
-    messages: Array<MessageItemPropsType>
+    appState: StatePropsType
 }
 
-function App (props: PropsType) {
+function App(props: PropsType) {
 
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar/>
+                <Navbar friendsState={props.appState.sidebar.friends}/>
                 <div className='app-wrapper-content '>
                     <Routes>
-                    <Route path='/dialogs/*' element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>} />
-                    <Route path='/profile/*' element={<Profile posts={props.posts}/>}/>
-                    <Route path='/news/*' element={<News />}/>
-                    <Route path='/music/*' element={<Music />}/>
-                    <Route path='/settings/*' element={<Settings />}/>
+                        <Route path='/dialogs/*' element={
+                            <Dialogs
+                                dialogsState={props.appState.dialogsPage} />}
+                        />
+                        <Route path='/profile/*' element={
+                            <Profile
+                                profileState={props.appState.profilePage}
+                            />}/>
+                        <Route path='/news/*' element={<News/>}/>
+                        <Route path='/music/*' element={<Music/>}/>
+                        <Route path='/settings/*' element={<Settings/>}/>
                     </Routes>
                 </div>
             </div>
