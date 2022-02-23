@@ -3,33 +3,33 @@ export type PostPropsType = {
     message: string
     like: number
 }
-
 export type DialogPropsType = {
     id: number
     name: string
 }
-
 export type FriendPropsType = {
     id: number
     name: string
 }
-
 export type MessagePropsType = {
     id: number
     message: string
 }
+export type ProfilePageType = {
+    posts: Array<PostPropsType>
+}
+export type DialogsPageType = {
+    messages: Array<MessagePropsType>
+    dialogs: Array<DialogPropsType>
+}
+export type SidebarType = {
+    friends: Array<FriendPropsType>
+}
 
 export type StatePropsType = {
-    dialogsPage: {
-        messages: Array<MessagePropsType>
-        dialogs: Array<DialogPropsType>
-    }
-    profilePage: {
-        posts: Array<PostPropsType>
-    }
-    sidebar: {
-        friends: Array<FriendPropsType>
-    }
+    dialogsPage: DialogsPageType
+    profilePage: ProfilePageType
+    sidebar: SidebarType
 }
 
 let state = {
